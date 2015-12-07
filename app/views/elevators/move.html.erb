@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="icon-bar vertical">
+    <% @elevator.floors.each do |floor| %>
+      <%= link_to elevators_move_path(floor), class: active_floor(@elevator.current_floor, floor) do %>
+        <i class="fa fa-stop-circle"></i>
+        <label><%= floor %></label>
+      <% end %>
+    <% end %>
+  </div>
+</div>

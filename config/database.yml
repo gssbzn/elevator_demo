@@ -1,0 +1,31 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+#
+# Configure Using Gemfile
+# gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: building_development
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: building_test
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+
+production:
+  <<: *default
+  database: building_production
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  pool: <%= ENV['DB_POOL'] || ENV['MAX_THREADS'] || 3 %>
+  reaping_frequency: <%= ENV['REAPING_FREQUENCY'] || nil %>
