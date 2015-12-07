@@ -16,7 +16,7 @@ A simple demo of the Elevator gem https://github.com/gssbzn/elevator/
 3. Create the database and run migrations.
 
   ```sh
-  $ rake db:create
+  $ rake db:setup
   ```
 
 ## Starting the app
@@ -25,6 +25,10 @@ You can start the app with foreman, this will launch puma web server:
 ```sh
 $ foreman start -f Procfile.dev
 ```
+
+## Running demo
+
+You can find the demo running at: https://elevator-demo-gus.herokuapp.com/
 
 ## License
 
