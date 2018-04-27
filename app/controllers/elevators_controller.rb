@@ -2,8 +2,7 @@
 class ElevatorsController < ApplicationController
   before_action :set_elevator
 
-  def index
-  end
+  def index; end
 
   def move
     reach_floor = MyElevator::Factory.instance.reach_floor
